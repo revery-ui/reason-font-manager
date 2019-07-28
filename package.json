@@ -21,7 +21,7 @@
     "@reason-native/pastel": "*",
     "@reason-native/rely": "*",
     "@esy-ocaml/reason": "3.4.0",
-    "refmterr": "*",
+    "refmterr": "*"
   },
   "peerDependencies": {
     "ocaml": ">=4.6.0 <4.8.0"

@@ -1,5 +1,12 @@
 (library
   (name FontManager)
-  (public_name FontManager)
-  (flags (-w -40 -w +26))
   (public_name reason-font-manager)
+  (library_flags (:include flags.sexp))
+  (c_flags (:include c_flags.sexp))
+  (cxx_flags (:include cxx_flags.sexp))
+)
+
+(rule
+  (targets c_flags.sexp cxx_flags.sexp flags.sexp)
+  (deps (:discover ../config/discover.exe))
+  (action (run %{discover})))
