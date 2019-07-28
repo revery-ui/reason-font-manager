@@ -1,6 +1,6 @@
 type t = {
     path: string,
-    postscriptname: string,
+    postscriptName: string,
     family: string,
     weight: int,
     width: int,

@@ -2,6 +2,7 @@
 #include "FontDescriptor.h"
 #include <dwrite.h>
 #include <dwrite_1.h>
+#include <unordered_set>
 
 // throws a JS error when there is some exception in DirectWrite
 #define HR(hr) \
@@ -176,7 +177,7 @@ ResultSet *getAvailableFonts() {
 
   // track postscript names we've already added
   // using a set so we don't get any duplicates.
-  // std::unordered_set<std::string> psNames;
+  std::unordered_set<std::string> psNames;
 
   for (int i = 0; i < familyCount; i++) {
     IDWriteFontFamily *family = NULL;
@@ -190,11 +191,10 @@ ResultSet *getAvailableFonts() {
       HR(family->GetFont(j, &font));
 
       FontDescriptor *result = resultFromFont(font);
-      // TODO: de-dup...
-      /*if (psNames.count(result->postscriptName) == 0) { */
+      if (psNames.count(result->postscriptName) == 0) {
         res->push_back(resultFromFont(font));
-        //psNames.insert(result->postscriptName);
-      /*}*/
+        psNames.insert(result->postscriptName);
+      }
     }
 
     family->Release();
@@ -231,24 +231,25 @@ bool resultMatches(FontDescriptor *result, FontDescriptor *desc) {
   return true;
 }
 
-ResultSet *findFonts(FontDescriptor *desc) {
-  ResultSet *fonts = getAvailableFonts();
-
-  /* TODO */
-  for (ResultSet::iterator it = fonts->begin(); it != fonts->end();) {
-    if (!resultMatches(*it, desc)) {
-      delete *it;
-      it = fonts->erase(it);
-    } else {
-      it++;
-    }
-  }
-
-  return fonts;
-}
-
 
 extern "C" {
+
+  ResultSet *findFonts(FontDescriptor *desc) {
+    ResultSet *fonts = getAvailableFonts();
+
+    /* TODO */
+    for (ResultSet::iterator it = fonts->begin(); it != fonts->end();) {
+      if (!resultMatches(*it, desc)) {
+        delete *it;
+        it = fonts->erase(it);
+      } else {
+        it++;
+      }
+    }
+
+    return fonts;
+  }
+  
   FontDescriptor *findFont(FontDescriptor *desc) {
     ResultSet *fonts = findFonts(desc);
 
