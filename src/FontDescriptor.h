@@ -1,8 +1,13 @@
 #ifndef FONT_DESCRIPTOR_H
 #define FONT_DESCRIPTOR_H
+
+#ifdef __APPLE__
+#include <vector>
+#else
 #include <cstdio>
 #include <cstring>
 #include <vector>
+#endif
 
 enum FontWeight {
   FontWeightUndefined   = 0,

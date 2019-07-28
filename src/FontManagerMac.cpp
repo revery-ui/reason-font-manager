@@ -203,7 +203,7 @@ CTFontDescriptorRef findBest(FontDescriptor *desc, NSArray *matches) {
   return best;
 }
 
-FontDescriptor *findFont(FontDescriptor *desc) {  
+extern "C" FontDescriptor *findFont(FontDescriptor *desc) {  
   FontDescriptor *res = NULL;
   CTFontDescriptorRef descriptor = getFontDescriptor(desc);
   NSArray *matches = (NSArray *) CTFontDescriptorCreateMatchingFontDescriptors(descriptor, NULL);

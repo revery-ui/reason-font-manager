@@ -31,6 +31,10 @@ let flags =
          @ cclib("-ldwrite")
          @ cclib("-lstdc++")
     | Linux -> []
+    | Mac -> []
+        @ ccopt("-framework CoreText")
+        @ ccopt("-framework Foundation")
+        @ cclib("-lstdc++")
     | _ -> []
 ;;
 
@@ -42,6 +46,7 @@ let flags_with_sanitize =
 
 let cxx_flags =
     match get_os with
+    | Mac -> c_flags @ ["-x"; "objective-c++"; "-lstdc++"]
     | Windows -> c_flags @ ["-fno-exceptions"; "-fno-rtti"; "-lstdc++"]
     | _ -> c_flags
 ;;

@@ -1,3 +1,4 @@
+#ifdef WIN32
 #define WINVER 0x0600
 #include "FontDescriptor.h"
 #include <dwrite.h>
@@ -491,3 +492,4 @@ FontDescriptor *substituteFont(char *postscriptName, char *string) {
 
   return res;
 }
+#endif
