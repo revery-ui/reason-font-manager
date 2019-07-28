@@ -1,5 +1,6 @@
 #ifndef FONT_DESCRIPTOR_H
 #define FONT_DESCRIPTOR_H
+#include <cstdio>
 #include <cstring>
 #include <vector>
 

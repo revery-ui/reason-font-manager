@@ -28,6 +28,8 @@ let cclib s = ["-cclib"; s]
 let flags =
     match get_os with
     | Windows ->  []
+         @ cclib("-ldwrite")
+         @ cclib("-lstdc++")
     | Linux -> []
     | _ -> []
 ;;
