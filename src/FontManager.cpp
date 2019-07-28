@@ -12,25 +12,24 @@ extern "C" {
     extern FontDescriptor *findFont(FontDescriptor *query);
     extern ResultSet *findFonts(FontDescriptor *query);
 
-    CAMLprim value fm_findFont(value family, value weight, value italic, value monospace) {
-        CAMLparam4(family, weight, italic, monospace);
+    CAMLprim value fm_findFont(value family, value bold, value italic, value monospace) {
+        CAMLparam4(family, bold, italic, monospace);
         CAMLlocal1(ret);
-        printf("fm_find_font\n");
 
         char* fontFamily = String_val(family);
-        int fontWeight = Int_val(weight);
+        int isBold = Bool_val(bold);
         int isItalic = Bool_val(italic);
         int isMono = Bool_val(monospace);
 
+        FontWeight weightToCheck = FontWeightNormal;
+        if (isBold) {
+            weightToCheck = FontWeightBold;
+        }
+        
         caml_release_runtime_system();
-        FontDescriptor *query = new FontDescriptor(NULL, NULL, fontFamily, NULL, FontWeightNormal, FontWidthUndefined, isItalic, isMono);
+        FontDescriptor *query = new FontDescriptor(NULL, NULL, fontFamily, NULL, weightToCheck, FontWidthUndefined, isItalic, isMono);
     
         FontDescriptor *font = findFont(query);
-        printf("\n------\n");
-        printf("Selected font:\n Path: %s\n Family: %s\n Monospace: %d\n", font->path, font->family, font->monospace);
-
-
-        printf("Completed!\n");
         caml_acquire_runtime_system();
 
         ret = caml_alloc(7, 0);

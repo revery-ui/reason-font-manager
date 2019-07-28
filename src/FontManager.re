@@ -1,8 +1,13 @@
+module FontDescriptor = FontDescriptor;
 
-external _findFont: (string, int, bool, bool) => FontDescriptor.t = "fm_findFont";
+external _findFont: (string, bool, bool, bool) => FontDescriptor.t = "fm_findFont";
 
-let test = () => {
-
-print_endline ("Hello from FontManager");
-_findFont("Arial", 1, true, true);
+let findFont = (
+    ~family: string,
+    ~bold: bool,
+    ~italic: bool,
+    ~mono: bool,
+    unit
+) => {
+    _findFont(family, bold, italic, mono);
 };

@@ -7,3 +7,9 @@ type t = {
     italic: bool,
     monospace: bool,
 };
+
+let show = (v: t) => {
+"FontDescriptor:\n"
+++ " - Path: " ++ v.path ++ "\n"
+++ " - Family: " ++ v.family ++ "\n"
+}
