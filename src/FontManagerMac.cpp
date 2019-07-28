@@ -1,3 +1,5 @@
+#ifdef __APPLE__
+
 #include <Foundation/Foundation.h>
 #include <CoreText/CoreText.h>
 #include "FontDescriptor.h"
@@ -251,3 +253,4 @@ FontDescriptor *substituteFont(char *postscriptName, char *string) {
   
   return res;
 }
+#endif

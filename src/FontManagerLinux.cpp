@@ -1,3 +1,5 @@
+#ifdef __linux__
+
 #include <fontconfig/fontconfig.h>
 #include "FontDescriptor.h"
 
@@ -244,3 +246,5 @@ FontDescriptor *substituteFont(char *postscriptName, char *string) {
 
   return res;
 }
+
+#endif
