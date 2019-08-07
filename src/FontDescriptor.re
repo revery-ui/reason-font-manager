@@ -12,4 +12,5 @@ let show = (v: t) => {
 "FontDescriptor:\n"
 ++ " - Path: " ++ v.path ++ "\n"
 ++ " - Family: " ++ v.family ++ "\n"
+++ " - Monospace: " ++ string_of_bool(v.monospace) ++ "\n"
 }

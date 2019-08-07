@@ -198,7 +198,7 @@ ResultSet *findFonts(FontDescriptor *desc) {
   return res;
 }
 
-FontDescriptor *findFont(FontDescriptor *desc) {
+extern "C" FontDescriptor *findFont(FontDescriptor *desc) {
   FcPattern *pattern = createPattern(desc);
   FcConfigSubstitute(NULL, pattern, FcMatchPattern);
   FcDefaultSubstitute(pattern);

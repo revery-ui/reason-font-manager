@@ -31,6 +31,8 @@ let flags =
          @ cclib("-ldwrite")
          @ cclib("-lstdc++")
     | Linux -> []
+         @ cclib("-lfontconfig")
+         @ cclib("-lstdc++")
     | Mac -> []
         @ ccopt("-framework CoreText")
         @ ccopt("-framework Foundation")
