@@ -48,6 +48,7 @@ let flags_with_sanitize =
 
 let cxx_flags =
     match get_os with
+    | Linux -> c_flags @ ["-fPIC"; "-lstdc++"]
     | Mac -> c_flags @ ["-x"; "objective-c++"; "-lstdc++"]
     | Windows -> c_flags @ ["-fno-exceptions"; "-fno-rtti"; "-lstdc++"]
     | _ -> c_flags

@@ -7,7 +7,7 @@ let findFont = (
     ~bold: bool,
     ~italic: bool,
     ~mono: bool,
-    unit
+    ()
 ) => {
     _findFont(family, bold, italic, mono);
 };
