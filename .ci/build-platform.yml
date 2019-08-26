@@ -26,11 +26,8 @@ jobs:
         displayName: "esy install"
       - script: "esy build"
         displayName: "esy build"
-      - template: utils/create-docs.yml
-      - script: "esy test"
-        displayName: "Test command"
-      - script: "esy release"
-        displayName: "esy release"
+      - script: "esy x FontQuery -family Arial"
+        displayName: "esy x FontQuery -family Arial"
       - template: utils/publish-build-cache.yml
       - task: PublishBuildArtifacts@1
         displayName: "Publish Artifact: ${{ parameters.platform }}"
