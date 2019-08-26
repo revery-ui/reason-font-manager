@@ -33,8 +33,3 @@ jobs:
       - script: "esy '@example' run"
         displayName: "esy '@example' run"
       - template: utils/publish-build-cache.yml
-      - task: PublishBuildArtifacts@1
-        displayName: "Publish Artifact: ${{ parameters.platform }}"
-        inputs:
-          PathtoPublish: "_release"
-          ArtifactName: ${{ parameters.platform }}
