@@ -22,14 +22,14 @@ jobs:
       - template: utils/use-node.yml
       - template: utils/use-esy.yml
       - template: utils/restore-build-cache.yml
-      - script: "esy install"
+      - script: esy install
         displayName: "esy install"
-      - script: "esy build"
+      - script: esy build
         displayName: "esy build"
-      - script: "esy '@example' install"
+      - script: esy '@example' install
         displayName: "esy '@example' install"
-      - script: "esy '@example' build"
+      - script: esy '@example' build
         displayName: "esy '@example' build"
-      - script: "esy '@example' run"
+      - script: esy '@example' run
         displayName: "esy '@example' run"
       - template: utils/publish-build-cache.yml
