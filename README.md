@@ -1,3 +1,5 @@
+[![Build Status](https://dev.azure.com/revery-ui/revery/_apis/build/status/revery-ui.reason-font-manager?branchName=master)](https://dev.azure.com/revery-ui/revery/_build/latest?definitionId=11&branchName=master)
+
 # reason-font-manager
 
 A ReasonML-native port of the excellent Node.js [font-manager](https://github.com/foliojs/font-manager) library by @devongovett 
