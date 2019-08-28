@@ -17,7 +17,7 @@ Arg.parse(spec, (_) => (), "Simple CLI utility to test findFont");
 
 FontManager.findFont(
     ~family=fontFamily^, 
-    ~bold=isBold^, 
+    ~weight=isBold^ ? FontManager.FontWeight.Bold : FontManager.FontWeight.Normal,
     ~italic=isItalic^, 
     ~mono=isMono^, 
     ())
