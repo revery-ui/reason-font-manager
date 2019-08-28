@@ -26,6 +26,21 @@
         }
     };
 
+    let ofInt = (v: int) => {
+        switch (v) {
+        | 100 => Thin
+        | 200 => UltraLight
+        | 300 => Light
+        | 400 => Normal
+        | 500 => Medium
+        | 600 => SemiBold
+        | 700 => Bold
+        | 800 => UltraBold
+        | 900 => Heavy
+        | _ => Undefined
+        }
+    };
+
     let show = (v: t) => {
         // NOTE: Must be in sync with FontDescriptor.h!
         switch (v) {

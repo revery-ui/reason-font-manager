@@ -26,6 +26,21 @@ type t =
         }
     };
 
+    let ofInt = (v: int) => {
+        switch (v) {
+    | 1 => UltraCondensed
+    | 2 => ExtraCondensed
+    | 3 => Condensed
+    | 4 => SemiCondensed
+    | 5 => Normal
+    | 6 => SemiExpanded
+    | 7 => Expanded
+    | 8 => ExtraExpanded
+    | 9 => UltraExpanded
+    | _ => Undefined
+        }
+    };
+
     let show = (v: t) => {
         switch (v) {
         // NOTE: Must be in sync with FontDescriptor.h!
