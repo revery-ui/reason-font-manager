@@ -12,6 +12,7 @@
     "buildsInSource": "_build"
   },
   "scripts": {
+    "format": "esy dune build @fmt --auto-promote"
   },
   "dependencies": {
     "@reason-native/console": "*",

@@ -12,22 +12,18 @@ extern "C" {
     extern FontDescriptor *findFont(FontDescriptor *query);
     extern ResultSet *findFonts(FontDescriptor *query);
 
-    CAMLprim value fm_findFont(value family, value bold, value italic, value monospace) {
-        CAMLparam4(family, bold, italic, monospace);
+    CAMLprim value fm_findFont(value family, value weight, value width, value italic, value monospace) {
+        CAMLparam5(family, weight, width, italic, monospace);
         CAMLlocal1(ret);
 
         char* fontFamily = String_val(family);
-        int isBold = Bool_val(bold);
+        FontWeight weightToCheck = (FontWeight)Int_val(weight);
+        FontWidth widthToCheck = (FontWidth)Int_val(width);
         int isItalic = Bool_val(italic);
         int isMono = Bool_val(monospace);
 
-        FontWeight weightToCheck = FontWeightNormal;
-        if (isBold) {
-            weightToCheck = FontWeightBold;
-        }
-        
         caml_release_runtime_system();
-        FontDescriptor *query = new FontDescriptor(NULL, NULL, fontFamily, NULL, weightToCheck, FontWidthUndefined, isItalic, isMono);
+        FontDescriptor *query = new FontDescriptor(NULL, NULL, fontFamily, NULL, weightToCheck, widthToCheck, isItalic, isMono);
     
         FontDescriptor *font = findFont(query);
         caml_acquire_runtime_system();
