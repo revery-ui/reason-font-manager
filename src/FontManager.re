@@ -2,7 +2,7 @@ module FontDescriptor = FontDescriptor;
 module FontWeight = FontWeight;
 module FontWidth = FontWidth;
 
-external _findFont: (string, int, int, bool, bool) => FontDescriptor.t =
+external _findFont: (string, int, int, bool, bool) => FontDescriptor.raw =
   "fm_findFont";
 
 let findFont =
@@ -20,5 +20,6 @@ let findFont =
     FontWidth.toInt(width),
     italic,
     mono,
-  );
+  ) 
+  |> FontDescriptor.ofRaw;
 };
