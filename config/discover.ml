@@ -33,6 +33,7 @@ let flags =
     | Linux -> []
          @ cclib("-lfontconfig")
          @ cclib("-lstdc++")
+         @ ccopt "-I/usr/include"
     | Mac -> []
         @ ccopt("-framework CoreText")
         @ ccopt("-framework Foundation")
