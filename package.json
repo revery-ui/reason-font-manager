@@ -16,11 +16,11 @@
     "format": "esy dune build @fmt --auto-promote"
   },
   "dependencies": {
+    "@opam/dune": ">=2.0.1",
     "@opam/dune-configurator": "*",
     "@esy-ocaml/reason": "^3.4.0"
   },
   "devDependencies": {
-    "@opam/dune": ">=2.0.1",
     "@opam/merlin": "*",
     "ocaml": ">=4.6.0",
     "refmterr": "*"

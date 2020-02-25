@@ -1,10 +1,10 @@
 {
   "source": "./package.json",
   "scripts": {
-      "run": "esy '@example' x FontQuery -family Arial"
+    "run": "esy '@example' x FontQuery -family Arial"
   },
   "override": {
-      "build": ["dune build --root . -j4"],
+    "build": ["dune build --root . -j4"],
     "install": [
       "esy-installer reason-font-manager.install",
       "esy-installer reason-font-manager-example.install",
