@@ -34,11 +34,11 @@
       "overrides": [],
       "dependencies": [
         "@opam/dune-configurator@opam:2.3.0@cf20be6b",
-        "@esy-ocaml/reason@3.5.2@d41d8cd9"
+        "@opam/dune@opam:2.3.0@3dc35de7", "@esy-ocaml/reason@3.5.2@d41d8cd9"
       ],
       "devDependencies": [
         "refmterr@3.3.0@d41d8cd9", "ocaml@4.9.0@d41d8cd9",
-        "@opam/merlin@opam:3.3.3@d653b06a", "@opam/dune@opam:2.3.0@3dc35de7"
+        "@opam/merlin@opam:3.3.3@d653b06a"
       ]
     },
     "ocaml@4.9.0@d41d8cd9": {
