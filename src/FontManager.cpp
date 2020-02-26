@@ -38,7 +38,6 @@ extern "C" {
         Store_field(ret, 6, Val_bool(font->monospace));
 
         delete font;
-        delete query;
 
         CAMLreturn(ret);
     }
