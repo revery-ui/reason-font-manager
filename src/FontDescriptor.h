@@ -82,16 +82,16 @@ public:
   
   ~FontDescriptor() {
     if (path)
-      delete path;
+      delete [] path;
     
     if (postscriptName)
-      delete postscriptName;
+      delete [] postscriptName;
     
     if (family)
-      delete family;
+      delete [] family;
     
     if (style)
-      delete style;
+      delete [] style;
     
     postscriptName = NULL;
     family = NULL;
