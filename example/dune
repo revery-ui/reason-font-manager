@@ -1,5 +1,5 @@
 (executable
   (name FontQuery)
   (public_name FontQuery)
-  (libraries FontManager)
+  (libraries FontManager reason-native-crash-utils.asan)
   (package reason-font-manager-example))
