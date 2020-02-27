@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@opam/dune": ">=2.0.1",
-    "@opam/dune-configurator": "*",
+    "@opam/dune-configurator": ">=2.0.1",
     "@esy-ocaml/reason": "^3.4.0"
   },
   "devDependencies": {

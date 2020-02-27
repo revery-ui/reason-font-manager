@@ -20,6 +20,6 @@ let findFont =
     FontWidth.toInt(width),
     italic,
     mono,
-  ) 
+  )
   |> FontDescriptor.ofRaw;
 };

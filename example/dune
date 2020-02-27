@@ -1,5 +1,5 @@
 (executable
-  (name FontQuery)
-  (public_name FontQuery)
-  (libraries FontManager)
-  (package reason-font-manager-example))
+ (name FontQuery)
+ (public_name FontQuery)
+ (libraries FontManager)
+ (package reason-font-manager-example))
