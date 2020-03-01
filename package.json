@@ -5,8 +5,8 @@
   "license": "MIT",
   "esy": {
     "build": "dune build -p #{self.name}",
-    "buildDev": "refmterr dune build -p #{self.name}",
     "install": [
+      "esy-installer reason-font-manager.install",
       "bash -c \"#{os == 'windows' ? 'cp /usr/x86_64-w64-mingw32/sys-root/mingw/bin/*.dll \\'$cur__bin\\'': 'echo no-op'}\""
     ]
   },
@@ -20,7 +20,6 @@
   },
   "devDependencies": {
     "@opam/merlin": "*",
-    "ocaml": ">=4.6.0",
-    "refmterr": "*"
+    "ocaml": ">=4.6.0"
   }
 }
