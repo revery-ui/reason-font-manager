@@ -4,29 +4,22 @@
   "description": "Native ReasonML library for discovering fonts",
   "license": "MIT",
   "esy": {
-    "build": "refmterr dune build -p #{self.name}",
+    "build": "dune build -p #{self.name}",
     "install": [
       "esy-installer reason-font-manager.install",
       "bash -c \"#{os == 'windows' ? 'cp /usr/x86_64-w64-mingw32/sys-root/mingw/bin/*.dll \\'$cur__bin\\'': 'echo no-op'}\""
-    ],
-    "buildsInSource": "_build"
+    ]
   },
   "scripts": {
     "format": "esy dune build @fmt --auto-promote"
   },
   "dependencies": {
-    "@reason-native/console": "*",
-    "@reason-native/pastel": "*",
-    "@reason-native/rely": "*",
-    "@esy-ocaml/reason": "^3.4.0",
-    "refmterr": "*"
-  },
-  "peerDependencies": {
-    "ocaml": ">=4.6.0"
+    "@opam/dune": ">=2.0.1",
+    "@opam/dune-configurator": ">=2.0.1",
+    "@esy-ocaml/reason": "^3.4.0"
   },
   "devDependencies": {
     "@opam/merlin": "*",
-    "ocaml": ">=4.6.0",
-    "@opam/dune": "^1.7.3"
+    "ocaml": ">=4.6.0"
   }
 }
