@@ -2,7 +2,7 @@
   (name FontQuery)
   (public_name FontQuery)
   (libraries 
-    FontManager 
+    reason-font-amanager 
 ; NOTE:
 ; There is a known leak on Linux that causes us to not run it generally:
 ; It's caused by not calling FcFini(), but FcFini() crashes if we call it -

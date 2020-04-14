@@ -1,10 +1,12 @@
 {
   "source": "./package.json",
   "scripts": {
-      "run": "esy '@example' x FontQuery -family Arial"
+    "run": "esy '@example' x FontQuery -family Arial"
   },
   "override": {
-      "build": ["dune build -p reason-font-manager,reason-font-manager-example . -j4"],
+    "build": [
+      "dune build -p reason-font-manager-example -j4"
+    ],
     "dependencies": {
       "reason-native-crash-utils": "github:onivim/reason-native-crash-utils#ae1fd34"
     },
@@ -12,6 +14,12 @@
       "esy-installer reason-font-manager.install",
       "esy-installer reason-font-manager-example.install",
       "bash -c \"#{os == 'windows' ? 'cp /usr/x86_64-w64-mingw32/sys-root/mingw/bin/*.dll $cur__bin': 'echo no-op'}\""
-    ]
+    ],
+    "dependencies": {
+      "reason-font-mananger": "*"
+    },
+    "resolutions": {
+      "reason-font-mananger": "link:./package.json"
+    }
   }
 }
