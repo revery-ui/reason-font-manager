@@ -16,7 +16,7 @@ extern "C" {
         CAMLparam5(family, weight, width, italic, monospace);
         CAMLlocal1(ret);
 
-        char* fontFamily = String_val(family);
+        const char* fontFamily = String_val(family);
         FontWeight weightToCheck = (FontWeight)Int_val(weight);
         FontWidth widthToCheck = (FontWidth)Int_val(width);
         int isItalic = Bool_val(italic);

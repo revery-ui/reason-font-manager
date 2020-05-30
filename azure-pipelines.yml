@@ -16,7 +16,7 @@ jobs:
   - template: .ci/build-platform.yml
     parameters:
       platform: macOS
-      vmImage: macOS-10.13
+      vmImage: macOS-10.14
       STAGING_DIRECTORY: /Users/runner/STAGING
       STAGING_DIRECTORY_UNIX: /Users/runner/STAGING
       ESY__CACHE_INSTALL_PATH: /Users/runner/.esy/3__________________________________________________________________/i
