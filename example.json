@@ -7,6 +7,9 @@
     "build": [
       "dune build -p reason-font-manager-example -j4"
     ],
+    "dependencies": {
+      "reason-native-crash-utils": "github:onivim/reason-native-crash-utils#ae1fd34"
+    },
     "install": [
       "esy-installer reason-font-manager.install",
       "esy-installer reason-font-manager-example.install",

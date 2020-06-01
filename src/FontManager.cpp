@@ -26,6 +26,8 @@ extern "C" {
         FontDescriptor *query = new FontDescriptor(NULL, NULL, fontFamily, NULL, weightToCheck, widthToCheck, isItalic, isMono);
     
         FontDescriptor *font = findFont(query);
+        delete query;
+
         caml_acquire_runtime_system();
 
         ret = caml_alloc(7, 0);
