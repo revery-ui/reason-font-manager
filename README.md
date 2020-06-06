@@ -1,3 +1,7 @@
+# NOTE: This repo has been archived and has moved to https://github.com/revery-ui/revery
+
+---
+
 [![Build Status](https://dev.azure.com/revery-ui/revery/_apis/build/status/revery-ui.reason-font-manager?branchName=master)](https://dev.azure.com/revery-ui/revery/_build/latest?definitionId=11&branchName=master)
 
 # reason-font-manager
